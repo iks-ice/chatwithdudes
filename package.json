@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "release": "git push heroku master"
+    "dev": "npm run build-client && nodemon server.js",
+    "release": "git push heroku master",
+    "build-client": "cd ./client && npm run build"
   },
   "keywords": [],
   "author": "",

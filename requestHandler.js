@@ -5,7 +5,7 @@ const path = require("path");
 module.exports = async function (req, res) {
   const {url} = req;
   console.log(req.url);
-  if(url.startsWith("/assets")) {
+  if(/assets/.test(url)) {
     return staticServer(url, res);
   }
  
@@ -18,6 +18,6 @@ module.exports = async function (req, res) {
     res.end(content);
   } catch (error) {
     console.log(error);
-    await appendFile("logs.txt", error, "utf-8");
+    await appendFile("logs.txt", JSON.stringify(error, null, 4), "utf-8");
   }
 }
