@@ -1,5 +1,6 @@
 const {readFile} = require("fs/promises");
 const staticServer = require("./staticServer.js");
+const path = require("path");
 
 module.exports = async function (req, res) {
   const {url} = req;
@@ -12,7 +13,7 @@ module.exports = async function (req, res) {
     
   }
   try {
-    const content = await readFile("./client/dist/index.html", "utf-8");
+    const content = await readFile(path.resolve("client", "dist", "index.html"), "utf-8");
     res.setHeader("Content-Type", "text/html");
     res.end(content);
   } catch (error) {
