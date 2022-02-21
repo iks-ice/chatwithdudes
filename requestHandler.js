@@ -13,7 +13,7 @@ module.exports = async function (req, res) {
     
   }
   try {
-    const content = await readFile("index.html", "utf-8");
+    const content = await readFile("papka/index.html", "utf-8");
     res.setHeader("Content-Type", "text/html");
     res.end(content);
   } catch (error) {
