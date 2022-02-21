@@ -1,4 +1,4 @@
-const {readFile} = require("fs/promises");
+const {readFile, appendFile} = require("fs/promises");
 const staticServer = require("./staticServer.js");
 const path = require("path");
 
@@ -18,5 +18,6 @@ module.exports = async function (req, res) {
     res.end(content);
   } catch (error) {
     console.log(error);
+    await appendFile("logs.txt", error, "utf-8");
   }
 }
