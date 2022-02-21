@@ -13,7 +13,9 @@ module.exports = async function (req, res) {
     
   }
   try {
-    const content = await readFile("papka/index.html", "utf-8");
+    const pathToFile = path.resolve("client", "dist", "index.html");
+    console.log(pathToFile);
+    const content = await readFile(pathToFile, "utf-8");
     res.setHeader("Content-Type", "text/html");
     res.end(content);
   } catch (error) {
