@@ -8,7 +8,7 @@ module.exports = async function (url, res) {
     if (!mime) {
       throw new Error(`no mime type for ext: ${ext}`)
     }
-    const content = await readFile(path.resolve("client", "dist", url.slice(1)), {
+    const content = await readFile(path.resolve("dist", url.slice(1)), {
       encoding: mime.startsWith("image") ? null : "utf-8",
     });
     res.statusCode = 200;

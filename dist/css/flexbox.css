@@ -1,0 +1,42 @@
+.flex {
+	display: flex;
+}
+.flex-inline {
+	display: inline-flex;
+}
+.ai-center {
+	align-items: center;
+}
+.jc-space-between {
+	justify-content: space-between;
+}
+.jc-center {
+  justify-content: center;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.flex-direction {
+	flex-direction: column;
+}
+.flex-1 {
+	flex: 1 1 auto;
+}
+.flex-0 {
+	flex: 0 0 auto;
+}
+.w100 {
+	width: 100%;
+}
+.w25 {
+	width: 25%;
+}
+.w50 {
+	width: 50%;
+}
+.w33 {
+	width: 33%;
+}
+.h100 {
+	height: 100%;
+}
