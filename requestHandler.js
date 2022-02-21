@@ -1,10 +1,11 @@
-const {readFile, appendFile} = require("fs/promises");
+const {readFile, appendFile, readdir} = require("fs/promises");
 const staticServer = require("./staticServer.js");
 const path = require("path");
 
 module.exports = async function (req, res) {
   const {url} = req;
   console.log(req.url);
+  await readdir("client/dist").then(arr => arr.forEach(i => console.log(i)))
   if(/assets/.test(url)) {
     return staticServer(url, res);
   }
